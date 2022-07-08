@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 11px; }
+
+div {
+  box-sizing: border-box; }
+
+#header .animated {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s; }
+

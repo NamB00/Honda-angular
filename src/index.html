@@ -1,13 +1,185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Honda</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Honda</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./styles.scss" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <app-root></app-root>
+
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/js/jquery.mCustomScrollbar.js"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#vehicle-list").mCustomScrollbar({
+          theme: "dark",
+        });
+
+        function move(value) {
+          $("#vehicle-list").mCustomScrollbar("scrollTo", value, {
+            scrollEasing: "easeOut",
+          });
+        }
+        $(".vehicle-nav ul li a").click(function () {
+          if ($(this).attr("id") === "cars-nav") {
+            move("#cars");
+          }
+          if ($(this).attr("id") === "suvs-nav") {
+            move("#cross");
+          }
+          if ($(this).attr("id") === "minivan-nav") {
+            move("#minivans");
+          }
+          if ($(this).attr("id") === "environmental-nav") {
+            move("#future");
+          }
+        });
+
+        var count = "";
+        $("#navbar > a").click(function () {
+          if (count === "") {
+            count = $(this).attr("id");
+            $(this).addClass("active");
+            if (count === "vehicles-link") {
+              $("#vehicles").removeClass("hide-vehicle");
+              $(".vehicle-nav").addClass(" animate__fadeInDown");
+              $("#vehicle-list").addClass("animate__fadeInUp");
+            }
+          } else {
+            if (count === $(this).attr("id")) {
+              $(this).removeClass("active");
+              count = "";
+              $(".vehicle-nav").addClass(" animate__fadeOutUp");
+              $("#vehicle-list").addClass("animate__fadeOutDown");
+              setTimeout(function () {
+                $("#vehicles").addClass("hide-vehicle");
+                $(".vehicle-nav").removeClass(" animate__fadeOutUp");
+                $("#vehicle-list").removeClass("animate__fadeOutDown");
+              }, 300);
+            } else {
+              $("#navbar > a").removeClass("active");
+              $(this).addClass("active");
+              count = $(this).attr("id");
+              if (count != "vehicles-link") {
+                $(".vehicle-nav").addClass(" animate__fadeOutUp");
+                $("#vehicle-list").addClass("animate__fadeOutDown");
+                setTimeout(function () {
+                  $("#vehicles").addClass("hide-vehicle");
+                  $(".vehicle-nav").removeClass(" animate__fadeOutUp");
+                  $("#vehicle-list").addClass("animate__fadeOutDown");
+                }, 300);
+              } else {
+                $("#vehicles").removeClass("hide-vehicle");
+                $(".vehicle-nav").addClass(" animate__fadeInDown");
+                $("#vehicle-list").addClass("animate__fadeInUp");
+              }
+            }
+          }
+        });
+
+        $("#vehicle-close").click(function () {
+          $(".vehicle-nav").addClass(" animate__fadeOutUp");
+          $("#vehicle-list").addClass("animate__fadeOutDown");
+          setTimeout(function () {
+            $("#vehicles").addClass("hide-vehicle");
+            $(".vehicle-nav").removeClass(" animate__fadeOutUp");
+            $("#vehicle-list").removeClass("animate__fadeOutDown");
+          }, 300);
+          $("#navbar a").removeClass("active");
+          // $(".vehicle-product").removeClass("animated fadeInUp");
+          count = "";
+        });
+
+        $(".vehicle-product").addClass("animated fadeInUp");
+        //active li
+        $(".carousel-indicators-config li").click(function () {
+          $(".carousel-indicators-config li").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        //indicators-xs-header
+        $(".indicators-xs-header").click(function () {
+          $(".carousel-indicators-xs ol").slideToggle();
+          $(".indicators-xs-header i").toggleClass("transform-rotate");
+        });
+        $(".carousel-indicators-xs ol li").click(function () {
+          $(".indicators-title span").html($(this).html());
+          $(".carousel-indicators-xs ol").slideUp();
+          $(".indicators-xs-header i").removeClass("transform-rotate");
+        });
+
+        //active >
+        var count = 0;
+        $(".carousel-control-prev").click(function () {
+          $(".carousel-indicators-config li").removeClass("active");
+          if (count == 0) {
+            count = 4;
+          } else {
+            count--;
+          }
+          $(".carousel-indicators-config li").each(function (i) {
+            if (i == count) {
+              $(this).addClass("active");
+              $(".indicators-title span").html($(this).html());
+            }
+          });
+        });
+        $(".carousel-control-next").click(function () {
+          $(".carousel-indicators-config li").removeClass("active");
+          if (count == 4) {
+            count = 0;
+          } else {
+            count++;
+          }
+          $(".carousel-indicators-config li").each(function (i) {
+            if (i == count) {
+              $(this).addClass("active");
+              $(".indicators-title span").html($(this).html());
+            }
+          });
+        });
+
+        //back-to-top
+        $(".back-to-top").click(function () {
+          $("body, html").animate({ scrollTop: 0 }, 1000);
+        });
+        //
+        $(window).resize(function () {
+          var width = $(window).width();
+          if (width >= 768) {
+            $(".collapse-ul").removeClass("collapse");
+          } else {
+            $(".collapse-ul").addClass("collapse");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

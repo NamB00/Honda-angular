@@ -1,0 +1,217 @@
+@each $stt, $bg-color in (1, #3c4c5c) (2, #5E5E5E) (3, #14409A) (4, #C0BAB5) (5, #929292) (6, #33569C){
+  #img-#{stt}{
+    background: linear-gradient(#ffffff, $color-grey, $color-grey);
+  }
+
+  .vehicle-product:hover >#img-#{stt}{
+    background: linear-gradient($bg-color, $color-grey, $color-grey);
+  }
+
+  .delay-#{$stt} {
+    animation-delay: 0.1s * $stt;
+  }
+}
+
+#img-1, #img-2, #img-3, #img-4, #img-5, #img-6 {
+  background: linear-gradient(#bbbdc0, #F6F6F6, #F6F6F6);
+}
+
+.vehicle-product:hover > #img-1 {
+  background: linear-gradient(#3c4c5c, #F6F6F6, #F6F6F6);
+}
+
+.vehicle-product:hover > #img-2 {
+  background: linear-gradient(#5E5E5E, #F6F6F6, #F6F6F6);
+}
+
+.vehicle-product:hover > #img-3 {
+  background: linear-gradient(#14409A, #F6F6F6, #F6F6F6);
+}
+
+.vehicle-product:hover > #img-4 {
+  background: linear-gradient(#8d4757, #F6F6F6, #F6F6F6);
+}
+
+.vehicle-product:hover > #img-5 {
+  background: linear-gradient(#3c4c5c, #F6F6F6, #F6F6F6);
+}
+
+.vehicle-product:hover > #img-6 {
+  background: linear-gradient(#14409A, #F6F6F6, #F6F6F6);
+}
+
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+
+.delay-3 {
+  animation-delay: 0.4s;
+}
+
+
+.delay-4 {
+  animation-delay: 0.5s;
+}
+
+.delay-5 {
+  animation-delay: 0.6s;
+}
+
+.delay-6 {
+  animation-delay: 0.7s;
+}
+
+// @each $stt,$img in (1, banner-1) (2, banner-2) (3, banner-3) (4, banner-4){
+//   #swipper-slider {
+//     .slide-#{$stt}{
+//       background-image: url("../../../assets/img/#{$img}.jpg");
+//       background-size: cover;
+//       background-position: center center;
+//       margin-top: 500px;
+//     }
+//   }
+// }
+
+
+#carouselExampleControls {
+  .slide-1{
+    background-image: url("/assets/img/banner-3.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+  .slide-2{
+    background-image: url("/assets/img/banner-2.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+  .slide-3{
+    background-image: url("/assets/img/banner-1.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+  .slide-4{
+    background-image: url("/assets/img/banner-4.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+  @media screen and (max-width: 768px){
+    .slide-1{
+      background-image: url("/assets/img/banner-3-xs.jpg");
+    }
+    .slide-2{
+      background-image: url("/assets/img/banner-2-xs.jpg");
+    }
+    .slide-3{
+      background-image: url("/assets/img/banner-1-xs.jpg");
+    }
+    .slide-4{
+      background-image: url("/assets/img/banner-4-xs.jpg");
+    }
+  }
+}
+
+
+.carousel-inner {
+  .item-1{
+    background-image: url("../../../assets/img/slider-1.jpg");
+    background-size: cover;
+  }
+  .item-2{
+    background-image: url('../../../assets/img/slider-2.jpg');
+    background-size: cover;
+  }
+  .item-3{
+    background-image: url('../../../assets/img/slider-3.jpg');
+    background-size: cover;
+  }
+  .item-4{
+    background-image: url('../../../assets/img/slider-4.jpg');
+    background-size: cover;
+  }
+  .item-5{
+    background-image: url('../../../assets/img/slider-4.jpg');
+    background-size: cover;
+  }
+  @media screen and (max-width: 768px){
+    .item-1{
+      background-image: url('../../../assets/img/slider-1-xs.jpg');
+    }
+    .item-2{
+      background-image: url('../../../assets/img/slider-2-xs.jpg');
+    }
+    .item-3{
+      background-image: url('../../../assets/img/slider-3-xs.jpg');
+    }
+    .item-4{
+      background-image: url('../../../assets/img/slider-4-xs.jpg');
+    }
+    .item-5{
+      background-image: url('../../../assets/img/slider-5-xs.jpg');
+    }
+  }
+}
+
+
+#vehicle-function {
+  .function-1, .function-2, .function-3, .function-4 {
+    background-image: url("../../../assets/img/item-1.jpg");
+    background-size: 120%;
+    height: 300px;
+    background-position: center 1rem;
+    background-repeat: no-repeat;
+    box-shadow: $box-shadow-2;
+    background-color: white;
+    position: relative;
+    background-position: center 0;
+    @media screen and (min-width: 440px) and (max-width: 576px) {
+      background-size: 100%;
+    }
+  }
+  .function-2{
+    background-image: url("../../../assets/img/item-2.jpg");
+  }
+  .function-3{
+    background-image: url("../../../assets/img/item-3.jpg");
+  }
+  .function-4{
+    background-image: url("../../../assets/img/item-4.jpg");
+  }
+}
+
+
+#discover {
+  .discover-item-1, .discover-item-2, .discover-item-3, .discover-item-4, .discover-item-5, .discover-item-6{
+    background-image: url("/assets/img/discover-1.jpg");
+    background-size: 120%;
+    height: 450px;
+    background-position: center 1rem;
+    background-repeat: no-repeat;
+    box-shadow: $box-shadow-2;
+    background-color: white;
+    position: relative;
+    background-position: center 0;
+    margin-bottom: $mg-3;
+  }
+  .discover-item-2{
+    background-image: url("/assets/img/discover-2.jpg");
+  }
+  .discover-item-3{
+    background-image: url("/assets/img/discover-3.jpg");
+  }
+  .discover-item-4{
+    background-image: url("/assets/img/discover-4.jpg");
+  }
+  .discover-item-5{
+    background-image: url("/assets/img/discover-5.jpg");
+  }
+  .discover-item-6{
+    background-image: url("../../img/discover-2.jpg");
+  }
+}

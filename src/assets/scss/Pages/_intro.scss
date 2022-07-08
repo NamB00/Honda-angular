@@ -1,0 +1,78 @@
+#intro {
+  background-color: $color-grey;
+  .intro-container {
+    padding: 0 $pd-8;
+    .intro-left, .intro-right {
+      height: 350px;
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+      background-clip: content-box;
+      margin-top: $mg-up-3;
+    }
+    .intro-left {
+      background-color: $color-black;
+      background-image: url('/assets/img/our-vehicle-intro-1.jpg');
+      .intro-left-content {
+        color: $color-white;
+        position: absolute;
+        bottom: 10%;
+        font-size: $font-size-1;
+        h4 {
+          font-weight: $font-weight-bold;
+          margin-bottom: $mg-2;
+        }
+        p {
+          font-weight: $font-weight-300;
+          font-size: 16px;
+          margin: 0 auto;
+          margin-bottom: $mg-3;
+          max-width: 80%;
+          text-align: center;
+        }
+      }
+    }
+    .intro-right {
+      background-image: url('/assets/img/our-vehicles-intro-2.jpg');
+      @media screen and (max-width: 576px) {
+        margin-top: $mg-2;
+      }
+      .intro-right-content {
+        color: $color-white;
+        position: absolute;
+        bottom: 10%;
+        // top: 40%;
+        left: 7%;
+        font-size: $font-size-2;
+        width: 40%;
+        h4 {
+          background: $color-blue-overlay;
+          font-weight: $font-weight-bold;
+          padding: $pd-1 $pd-2;
+          margin-bottom: $mg-2;
+          display: inline-block;
+        }
+        p{
+          font-weight: $font-weight-700;
+          margin-bottom: $mg-3;
+          padding: 0 $pd-3;
+          font-size: 17px;
+        }
+        button {
+
+        }
+      }
+    }
+  }
+  .intro-2 {
+    margin-top: 135px;
+  }
+  .intro-left-1 {
+    background-image: url('../../img/intro-3.jpg')!important;
+    margin-top: 0;
+  }
+  .intro-right-1 {
+    background-image: url('../../img/intro-4.jpg')!important;
+    margin-top: 0;
+  }
+}
